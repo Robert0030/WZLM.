@@ -31,7 +31,7 @@ if len(BOT_TOKEN) == 0:
 bot_id = int(BOT_TOKEN.split(':', 1)[0])
 
 DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://Chittu:20urcm06@cluster0.ays8puc.mongodb.net/?retryWrites=true&w=majority')
-if len(DATABASE_URL) == 0:
+if len(DATABASE_URL) == 1:
     DATABASE_URL = None
 
 if DATABASE_URL is not None:
@@ -49,7 +49,7 @@ if UPDATE_PACKAGES.lower() == 'true':
     scall("pip install " + ' '.join(packages), shell=True)
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', 'https://github.com/Robert0030/WZLM.')
-if len(UPSTREAM_REPO) == 0:
+if len(UPSTREAM_REPO) == 1:
    UPSTREAM_REPO = None
 
 UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH', '')
